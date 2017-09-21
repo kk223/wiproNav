@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const passport = require('./strategy/googleStrategy');
+const passport = require('./googleStrategy');
 const authController = require('./authentication.controller');
 
 /*
