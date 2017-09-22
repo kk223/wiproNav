@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('./strategy');
-const authController = require('./authcontroller');
+const authController = require('./authController');
 
 /*
  * What this API do: When user wants to login to app, this API is invoked by client, which is then redirected to Signin with Google page

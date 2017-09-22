@@ -5,7 +5,7 @@
  */
 
 //Create instance of express based web app
-var app = require('../app.js');
+var app = require('../server/app.js');
 // var wsService = require('../server/websockets/websocket.server');
 var debug = require('debug')('dataDisplayApp:server');
 var http = require('http');

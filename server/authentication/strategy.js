@@ -1,9 +1,10 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const Users = require('../users/users.entity');
-const configAuth = require('../config/config.js');
-
+const configAuth = require('../../config/config.js');
+// console.log(configAuth);
 // defining google strategy for passport authentication
+console.log('cnfig file is accesible',configAuth.GOOGLE_AUTH);
 passport.use(new GoogleStrategy({
     clientID: configAuth.GOOGLE_AUTH.clientID,
     clientSecret: configAuth.GOOGLE_AUTH.clientSecret,

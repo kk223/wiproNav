@@ -6,27 +6,27 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const users = require('./users');
 const auth = require('./authentication');
-const configJwt = require('./config/config.js');
+const configJwt = require('../config/config.js');
 const app = express();
 const mongoose = require('mongoose');
-const configDB = require('./config/config.js');
+const configDB = require('../config/config.js');
 
 // setting secret variable for JWT encode and decode
-app.set('superSecret', configJwt.JWT_AUTH.secret);
-mongoose.Promise = global.Promise;
-mongoose.connect(configDB.MONGO.URL);
-
-// using morgan for logging each incoming requests
-app.use(morgan('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
-const compression = require('compression');
-app.use(compression());
+// app.set('superSecret', configJwt.JWT_AUTH.secret);
+// mongoose.Promise = global.Promise;
+// mongoose.connect(configDB.MONGO.URL);
+//
+// // using morgan for logging each incoming requests
+// app.use(morgan('dev'));
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({extended: false}));
+// const compression = require('compression');
+// app.use(compression());
 
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
-const webpackConfig = require('./webpack.config.js');
+const webpackConfig = require('../webpack.config.js');
 const webpackCompiler = webpack(webpackConfig);
 
 // setting up webpack developement middlewares
@@ -40,10 +40,10 @@ app.use(webpackHotMiddleware(webpackCompiler, {
     path: '/__webpack_hmr',
     heartbeat: 10 * 1000
 }));
-app.use(express.static(path.resolve(__dirname, './', 'webclient')));
+app.use(express.static(path.resolve(__dirname, '../', 'webclient')));
 
 app.get('/', function(req, res) {
-    res.sendFile(path.resolve(__dirname, './', 'webclient', 'assets', 'index.html', 'client'));
+    res.sendFile(path.resolve(__dirname, '../', 'webclient', 'assets', 'index.html', 'client'));
 });
 app.use('/auth', auth);
 app.use('/users', users);
