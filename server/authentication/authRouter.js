@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const passport = require('./googleStrategy');
-const authController = require('./authentication.controller');
+const passport = require('./strategy');
+const authController = require('./authcontroller');
 
 /*
  * What this API do: When user wants to login to app, this API is invoked by client, which is then redirected to Signin with Google page
@@ -58,3 +58,4 @@ router.get('/logout', function(req, res) {
 });
 
 module.exports = router;
+0

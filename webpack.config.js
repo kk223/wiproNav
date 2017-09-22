@@ -4,11 +4,11 @@ const webpack = require('webpack');
 module.exports = {
     context: __dirname,
     entry: [
-        // 'webpack-hot-middleware/client?path=http://localhost:8080/__webpack_hmr',
-        path.resolve(__dirname,  'App.jsx')
+        'webpack-hot-middleware/client?path=http://localhost:8080/__webpack_hmr',
+        path.resolve(__dirname, 'webclient', 'App.jsx')
     ],
     output: {
-        path: path.resolve(__dirname,  'assets'),
+        path: path.resolve(__dirname, 'webclient', 'assets'),
         filename: 'bundle.js',
         publicPath: '/assets/'
     },
@@ -31,12 +31,15 @@ module.exports = {
              }
         ]
     },
-    // node: {
-    //     console: true,
-    //     fs: 'empty',
-    //     net: 'empty',
-    //     tls: 'empty'
-    // },
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(), new webpack.NoEmitOnErrorsPlugin()
+    ],
+    node: {
+        console: true,
+        fs: 'empty',
+        net: 'empty',
+        tls: 'empty'
+    },
     externals: {
       'react/lib/ReactInjection': true
     }

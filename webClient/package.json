@@ -33,6 +33,7 @@
     "react-router": "^3.0.2",
     "react-tap-event-plugin": "^2.0.1",
     "style-loader": "^0.15.0",
+    "mongoose": "^4.9.0",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.1"
   },
