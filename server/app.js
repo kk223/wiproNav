@@ -11,17 +11,17 @@ const app = express();
 const mongoose = require('mongoose');
 const configDB = require('../config/config.js');
 
-// setting secret variable for JWT encode and decode
-// app.set('superSecret', configJwt.JWT_AUTH.secret);
-// mongoose.Promise = global.Promise;
-// mongoose.connect(configDB.MONGO.URL);
-//
-// // using morgan for logging each incoming requests
-// app.use(morgan('dev'));
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({extended: false}));
-// const compression = require('compression');
-// app.use(compression());
+//setting secret variable for JWT encode and decode
+app.set('superSecret', configJwt.JWT_AUTH.secret);
+mongoose.Promise = global.Promise;
+mongoose.connect(configDB.MONGO.URL);
+
+// using morgan for logging each incoming requests
+app.use(morgan('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+const compression = require('compression');
+app.use(compression());
 
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
