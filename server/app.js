@@ -12,9 +12,9 @@ const mongoose = require('mongoose');
 const configDB = require('../config/config.js');
 
 //setting secret variable for JWT encode and decode
-app.set('superSecret', configJwt.JWT_AUTH.secret);
-mongoose.Promise = global.Promise;
-mongoose.connect(configDB.MONGO.URL);
+// app.set('superSecret', configJwt.JWT_AUTH.secret);
+// mongoose.Promise = global.Promise;
+// mongoose.connect(configDB.MONGO.URL);
 
 // using morgan for logging each incoming requests
 app.use(morgan('dev'));

@@ -59,8 +59,8 @@ let styles = {
         color: '#FFF'
     },
     drawerAppbarStyle: {
-        backgroundColor: '#2a7561',
-        opacity: 0.9
+        backgroundColor: '#000',
+        opacity: 0.8
     },
     appbarStyle: {
         backgroundColor: '#000',
@@ -293,11 +293,11 @@ class Navbar extends React.Component {
                 }
                 style = {
                     styles.linkStyle
-                } > <span style={styles.appbarTitleStyle}>Cognitive Assistant</span> < /Link>} titleStyle={styles.appbarTitleStyle} iconElementRight={rightIcon} onLeftIconButtonTouchTap={this.toggleNav.bind(this)}/>
+                } > <span style={styles.appbarTitleStyle}>Wipro Navigator</span> < /Link>} titleStyle={styles.appbarTitleStyle} iconElementRight={rightIcon} onLeftIconButtonTouchTap={this.toggleNav.bind(this)}/>
                 <Drawer open={this.state.openDrawer} containerStyle={styles.drawerStyle} docked={false} onRequestChange={(open) => this.setState({openDrawer: open})}>
                     <AppBar style={styles.drawerAppbarStyle} title={< span style = {
                         styles.drawerAppbarTitleStyle
-                    } > Lucy < /span>} titleStyle={styles.appbarTitleStyle} onLeftIconButtonTouchTap={this.toggleNav.bind(this)}/>
+                    } > Menu < /span>} titleStyle={styles.appbarTitleStyle} onLeftIconButtonTouchTap={this.toggleNav.bind(this)}/>
                     <CustomMenu menu={this.state.drawerMenu}/>
                 </Drawer>
             </div>
