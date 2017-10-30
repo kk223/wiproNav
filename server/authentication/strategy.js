@@ -5,13 +5,26 @@ const configAuth = require('../../config/config.js');
 // console.log(configAuth);
 // defining google strategy for passport authentication
 console.log('cnfig file is accesible',configAuth.GOOGLE_AUTH);
+// passport.serializeUser(function(user, done) {
+//        done(null, user.id);
+//    });
+//
+//    // used to deserialize the user
+//    passport.deserializeUser(function(id, done) {
+//        User.findById(id, function(err, user) {
+//            done(err, user);
+//        });
+//    });
 passport.use(new GoogleStrategy({
     clientID: configAuth.GOOGLE_AUTH.clientID,
     clientSecret: configAuth.GOOGLE_AUTH.clientSecret,
     callbackURL: configAuth.GOOGLE_AUTH.callbackURL
-}, function(token, refreshToken, profile, done) {
-    process.nextTick(function() {
+},
+function(token, refreshToken, profile, done) {
+console.log("token by passport",token);
+      process.nextTick(function() {
       // checking for the existence of user details in database
+
         Users.findOne({
             username: profile.emails[0].value
         }, function(err, user) {

@@ -61,6 +61,7 @@ const contentWrapper= styled.div`
             <Box  bgColor={colors[2]} width={styles[2].width}/>
             <Box  bgColor={colors[3]} width={styles[3].width}/>
             <Paper style={Style} zDepth={2}>
+            <a href='/auth/google'>click to login</a>
             </Paper>
           </Wrapper>
         )}
@@ -70,6 +71,3 @@ const contentWrapper= styled.div`
     }
   }
   export default Entrance;
-
-  
-

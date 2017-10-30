@@ -6,6 +6,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import AppHeader from './components/welcome.jsx';
 import Entrance from './components/entranceAnimation.jsx';
 import EnsureLoggedInContainer from './EnsureLoggedInContainer.jsx';
+import Navigator from './components/navigator.jsx';
 injectTapEventPlugin();
 
 ReactDOM.render((
@@ -13,6 +14,7 @@ ReactDOM.render((
         <Route path="/" component={AppHeader}>
             <Route path="/Home" component={Entrance}/>
             <Route component={EnsureLoggedInContainer}>
+            <Route component="/User" component={Navigator}/>
             </Route>
         </Route>
     </Router>

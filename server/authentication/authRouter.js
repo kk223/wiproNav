@@ -26,7 +26,8 @@ router.get('/google/callback', passport.authenticate('google', {
   // in case of valid credantials it'll pass the JWT token via URL
     try {
         const token = authController.googleCallback(req.user);
-        res.redirect('/#/UserHome?token=' + token);
+        console.log("inside authroue",token);
+        res.redirect('/#/User?token=' + token);
     } catch (e) {
         res.redirect('/#/errorpage');
     }

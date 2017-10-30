@@ -12,9 +12,9 @@ const mongoose = require('mongoose');
 const configDB = require('../config/config.js');
 
 //setting secret variable for JWT encode and decode
-// app.set('superSecret', configJwt.JWT_AUTH.secret);
-// mongoose.Promise = global.Promise;
-// mongoose.connect(configDB.MONGO.URL);
+app.set('superSecret', configJwt.JWT_AUTH.secret);
+mongoose.Promise = global.Promise;
+mongoose.connect(configDB.MONGO.URL);
 
 // using morgan for logging each incoming requests
 app.use(morgan('dev'));
@@ -45,8 +45,9 @@ app.use(express.static(path.resolve(__dirname, '../', 'webclient')));
 app.get('/', function(req, res) {
     res.sendFile(path.resolve(__dirname, '../', 'webclient', 'assets', 'index.html', 'client'));
 });
-app.use('/auth', auth);
 app.use('/users', users);
+app.use('/auth', auth);
+
 
 app.use(function(req, res) {
     let err = new Error('Resource not found');

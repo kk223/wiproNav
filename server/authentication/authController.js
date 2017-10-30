@@ -16,6 +16,7 @@ const googleCallback = function(user) {
 // this function is to authenticate user actions by passing token, decoding it and matching with the database
 const authenticatePage = function(token) {
     try {
+        console.log("inside callback");
       const user = jwtDecode(token);
       const promise = new Promise(function(resolve, reject) {
           // checking for the existence of user data in database mongodb

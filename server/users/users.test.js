@@ -19,4 +19,3 @@ describe('userController.user', function() {
     })).to.equal(null);
   });
 });
-};
