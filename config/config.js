@@ -1,7 +1,7 @@
 const config={
 		GOOGLE_AUTH: {
 									clientID:"479564436864-j69mgl5d3804ckgc1fqosq8i6vssmohd.apps.googleusercontent.com",
-									clientSecret:"XuqAWSmtwW4kKTKpRxTMDJIe",
+									clientSecret:"66VvDQsSfKFhzY0gUvlmPmCL",
 									callbackURL: "http://127.0.0.1:8080/auth/google/callback"
 								 },
 			 JWT_AUTH: {
